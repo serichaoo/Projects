@@ -15,6 +15,11 @@
 # which is obtained when r_i = (1/R_i) * (sum(1/R_i))^-1
 # then, profit > 0 iff m > 1 <=> sum(1/R_i) < 1
 
+# alternatively, informally, to not lose profit, we require R_i * r_i >= 1 for all i
+# => r_i >= 1/R_i for all i, so we first take r_i = 1/R_i. If sum(r_i) >= 1, a profit
+# cannot be guaranteed. Otherwise, we can scale each r_i up by a ratio such that sum(r_i) = 1,
+# yielding r_i = (1/R_i) * (sum(1/R_i))^-1
+
 bettingOddsStr = input("This script is designed to maximize the guaranteed profits " +
                 "given a certain number of events, where one is guaranteed to occur " +
                 "and where each event has their own (European) decimal betting odds. " +
